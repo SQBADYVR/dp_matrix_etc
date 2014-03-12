@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  scope: MyString
+  team_id: 1
+  fmea_id: 1
+
+two:
+  title: MyString
+  scope: MyString
+  team_id: 1
+  fmea_id: 1
