@@ -18,13 +18,11 @@ class UsersController < ApplicationController
 
    def create
     @user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-       else
-        format.html { render action: 'new' }
-      end
+    if @user.save
+      flash[:success] = "Welcome to the Design for Quality App"
+      redirect_to @user
+    else
+      render 'new'
     end
   end
 
@@ -43,14 +41,6 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to users_url }
    end
-  end
-  def create
-    @user = User.new(params[:user])    # Not the final implementation!
-    if @user.save
-      # Handle a successful save.
-    else
-      render 'new'
-    end
   end
 
   private
